@@ -1,32 +1,19 @@
 #!/usr/bin/env python3
 
-movie_list = ["Great Outdoors", "InnerSpace", "Planes, Trains and Automobiles","Funny Farm", "Father of the Bride", "Delirious", "Captain Ron", "Christmas Vacation", "Stripes" ]
+movie_list = ["g. Great Outdoors", "b. InnerSpace", "a. Planes, Trains and Automobiles", "f. Funny Farm", "c. Delirious", "d. Captain Ron", "e. Stripes"]
 
-actors = ["John Candy", "Steve Martin", "Martin Short","Chevy Chase"]
+questions = {"A Chicago advertising man must struggle to travel home from New York for Thanksgiving, with a lovable oaf of a shower-curtain-ring salesman as his only companion.": "a", "A test pilot is miniaturized in a secret experiment, and accidentally injected into a hapless store clerk.":"b", "A soap opera writer gets hit on the head and wakes up as a character in his own show.": "c", "A Chicagoan inherits an old yacht. He, his wife, daughter and son fly to a Caribbean island and hire a dubious Captain Ron to sail them on an adventure to Miami." : "d", "Two friends who are dissatisfied with their jobs decide to join the army for a bit of fun.": "e", "A couple swap city life for the country, but their picturesque new hometown turns out to be just a little bit different to what they were expecting.": "f", "A Chicago man and his family go camping with his obnoxious brother-in-law.": "g"}
 
-round = 0
 
-while round < 8: 
-    round = round + 1
-    print ("Can you guess what this four  80s/90s movie and actor this is?")
 
-    print("A Chicago advertising man must struggle to travel home from New York for Thanksgiving, with a lovable oaf of a shower-curtain-ring salesman as his only companion.")
+for key in questions:
+    print(key)
+    for ml in movie_list:
+        print(ml)
+    movie_name = input("Enter a,b,c,d,e,f, or g: ")
+    movie_name = movie_name.lower()
 
-    print("What is the name of the advertising man?")
-    advert_man = input()
-    if advert_man == "Steve Martin":
-        print("You are correct." +advert_man+ " Is the advertising man")
-        break
-    else: 
-        print("That is incorrect please try again")
-        break
-        print("What is the name of the movie")
-        pta = input()
-     if pta == "Planes, Trains and Automobiles":
-        print("You are correct. " +pta+ " is the name of the movie")
-        break
+    if questions.get(key)  ==  movie_name:
+        print("You answer is correct")
     else:
-        print("Please try again")
-        break
-
-
+        print("Your answer is incorrect")
