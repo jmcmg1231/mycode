@@ -21,13 +21,15 @@ def main():
     ciscodf.to_json("combined_ciscodata.json")
 
     ## export to csv
-    ciscodf.to_csv("combined_ciscodata.csv")
+    ciscodf.to_csv("combined_ciscodata.csv", index=False)
     
     ## export to Excel
-    ciscodf.to_excel("combined_ciscodata.xls")
+    ciscodf.to_excel("combined_ciscodata.xls", index=False)
+
+    ciscodf.to_excel("combined_ciscodata.xls", index=False)
     
     ## create a python dictionary
-    x = ciscodf.to_dict()
+    x = ciscodf.to_dict(orient='records')
     print(x)
     
 if __name__ == "__main__":
